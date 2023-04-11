@@ -1,6 +1,6 @@
 import React from 'react';
 
-const JinPage = () => {
+const GinPage = () => {
     return (
         <>
             <div className="container my-container">
@@ -11,7 +11,7 @@ const JinPage = () => {
 
 
             <section className="news-section">
-                <div className="container my-container">
+                <div className="container my-container" style={{display: 'block'}}>
 
                     <div style={{display: 'flex'}} className="single-items">
                         <div style={{display: 'flex', justifyContent: "center"}} className="img-box">
@@ -39,9 +39,9 @@ const JinPage = () => {
             </div>
 
             <section className="news-section">
-                <div className="container my-container">
+                <div className="container my-container" style={{display: 'block'}}>
 
-                    <div style={{display: 'flex'}} className="single-items">
+                    <div style={{display: 'flex'}} className="single-items-2">
                         <div className="lower-content">
                             <h4><a href="#">JAMUN THE HIMALYAN JUNIPER DRY GIN 42,8%</a></h4>
                             <p className='text'>
@@ -62,4 +62,4 @@ const JinPage = () => {
     );
 };
 
-export default JinPage;
+export default GinPage;

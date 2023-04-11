@@ -1,13 +1,206 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useState} from 'react';
+import { Link } from "react-router-dom";
 import {useNavigate} from "react-router-dom";
 import {
-    Box,
+    Accordion, AccordionDetails, AccordionSummary,
+    Box, Drawer, List, ListItem, ListItemIcon, Typography,
 } from "@mui/material";
-
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 const Header = (props) => {
     const [isVisible, setIsVisible] = useState(false);
     const [isVisible2, setIsVisible2] = useState(false);
     const [isVisible3, setIsVisible3] = useState(false);
+
+    const drawer = () => {
+        return (
+<Box role={'presentation'}>
+    <Drawer
+        variant={'temporary'}
+        anchor={'right'}
+        open={mobileOpen}
+        onClose={() => setMobileOpen(false)}
+        PaperProps={{
+            sx: {
+                backgroundColor: "#2c2e2d",
+                width: '33%',
+            },
+        }}
+    >
+        <List>
+            <ListItem button onClick={() => setMobileOpen(false)}>
+                <ListItemIcon>
+                    <ListItem
+                        component={Link}
+                        style={{
+                            textDecoration: "none",
+                            color: "#e0e0e0",
+                            fontWeight: 400,
+                        }}
+                        to="/"
+                    >
+                         Главная
+                    </ListItem>
+                </ListItemIcon>
+            </ListItem>
+            <ListItem button >
+                <Accordion sx={{backgroundColor: '#2c2e2d', boxDecorationBreak: 'inherit', boxShadow: 'inherit'}}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
+                        sx={{color: 'rgb(224 224 224)'}}
+                    >
+                        <Typography sx={{color: 'rgb(224 224 224)', fontWeight: 400, fontFamily: '"Oswald", Arial, Tahoma, sansSerif', fontSize: '17px', lineHeight: '0px'}}>Каталог</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <List>
+                            <ListItem button onClick={() => setMobileOpen(false)}>
+                                <ListItemIcon>
+                                    <ListItem
+                                        component={Link}
+                                        style={{
+                                            textDecoration: "none",
+                                            color: "#e0e0e0",
+                                            fontWeight: 400,
+                                        }}
+                                        to="/rum"
+                                    >
+                                        Ром
+                                    </ListItem>
+                                </ListItemIcon>
+                            </ListItem>
+                            <ListItem button onClick={() => setMobileOpen(false)}>
+                                <ListItemIcon>
+                                    <ListItem
+                                        component={Link}
+                                        style={{
+                                            textDecoration: "none",
+                                            color: "#e0e0e0",
+                                            fontWeight: 400,
+                                        }}
+                                        to="/whisky"
+                                    >
+                                        Виски
+                                    </ListItem>
+                                </ListItemIcon>
+                            </ListItem>
+                            <ListItem button onClick={() => setMobileOpen(false)}>
+                                <ListItemIcon>
+                                    <ListItem
+                                        component={Link}
+                                        style={{
+                                            textDecoration: "none",
+                                            color: "#e0e0e0",
+                                            fontWeight: 400,
+                                        }}
+                                        to="/gin"
+                                    >
+                                        Джин
+                                    </ListItem>
+                                </ListItemIcon>
+                            </ListItem>
+                            <ListItem button onClick={() => setMobileOpen(false)}>
+                                <ListItemIcon>
+                                    <ListItem
+                                        component={Link}
+                                        style={{
+                                            textDecoration: "none",
+                                            color: "#e0e0e0",
+                                            fontWeight: 400,
+                                        }}
+                                        to="/vodka"
+                                    >
+                                        Водка
+                                    </ListItem>
+                                </ListItemIcon>
+                            </ListItem>
+                            <ListItem button onClick={() => setMobileOpen(false)}>
+                                <ListItemIcon>
+                                    <ListItem
+                                        component={Link}
+                                        style={{
+                                            textDecoration: "none",
+                                            color: "#e0e0e0",
+                                            fontWeight: 400,
+                                        }}
+                                        to="/priambeverages"
+                                    >
+                                        Напитки<br/>
+                                        Priam Beverages
+                                    </ListItem>
+                                </ListItemIcon>
+                            </ListItem>
+                        </List>
+                    </AccordionDetails>
+                </Accordion>
+            </ListItem>
+            <ListItem button onClick={() => setMobileOpen(false)}>
+                <ListItemIcon>
+                    <ListItem
+                        component={Link}
+                        style={{
+                            textDecoration: "none",
+                            color: "#e0e0e0",
+                            fontWeight: 400,
+                        }}
+                        to="/about"
+                    >
+                        О компании
+                    </ListItem>
+                </ListItemIcon>
+            </ListItem>
+            <ListItem button onClick={() => setMobileOpen(false)}>
+                <ListItemIcon>
+                    <ListItem
+                        component={Link}
+                        style={{
+                            textDecoration: "none",
+                            color: "#e0e0e0",
+                            fontWeight: 400,
+                        }}
+                        to="/partners"
+                    >
+                         Партнерам
+                    </ListItem>
+                </ListItemIcon>
+            </ListItem>
+            <ListItem button onClick={() => setMobileOpen(false)}>
+                <ListItemIcon>
+                    <ListItem
+                        component={Link}
+                        style={{
+                            textDecoration: "none",
+                            color: "#e0e0e0",
+                            fontWeight: 400,
+                        }}
+                        to="/news"
+                    >
+                        Новости
+                    </ListItem>
+                </ListItemIcon>
+            </ListItem>
+            <ListItem button onClick={() => setMobileOpen(false)}>
+                <ListItemIcon>
+                    <ListItem
+                        component={Link}
+                        style={{
+                            textDecoration: "none",
+                            color: "#e0e0e0",
+                            fontWeight: 400,
+                        }}
+                        to="/contact"
+                    >
+                        Контакты
+                    </ListItem>
+                </ListItemIcon>
+            </ListItem>
+        </List>
+    </Drawer>
+</Box>
+
+
+        )
+    }
     const showHiddenSubMenu = () => {
         if(isVisible) {
             return 'block';
@@ -15,56 +208,20 @@ const Header = (props) => {
             return 'none';
         }
     }
-    const showHiddenSubMenu2 = () => {
-        if(isVisible2) {
-            return 'block';
-        } else {
-            return 'none';
-        }
-    }
-    const showHiddenSubMenu3 = () => {
-        if(isVisible3) {
-            return 'block';
-        } else {
-            return 'none';
-        }
-    }
+
 
     const { window } = props;
-    const [mobileOpen, setMobileOpen] = React.useState(false);
+    const [mobileOpen, setMobileOpen] = useState(false);
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
-    const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            <ul className="mobile-menu clearfix">
-                <li className="current"><a href="index.html">Home</a></li>
-                <li className="dropdown"><a href="#">About Us</a>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="error.html">Error Page</a></li>
-                    </ul>
-                </li>
-                <li><a href="service.html">Services</a></li>
-                <li className="dropdown"><a href="#">Case Studies</a>
-                    <ul>
-                        <li><a href="case-studies.html">Case Studies</a></li>
-                        <li><a href="case-details.html">Case Details</a></li>
-                    </ul>
-                </li>
-                <li className="dropdown"><a href="#">Blog</a>
-                    <ul>
-                        <li><a href="blog.html">News Blog</a></li>
-                        <li><a href="blog-details.html">Blog Details</a></li>
-                    </ul>
-                </li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </Box>
-    );
+
+
 
     const container = window !== undefined ? () => window().document.body : undefined;
+
+
 
     return (
         <>
@@ -81,13 +238,14 @@ const Header = (props) => {
                             <div className="menu-area">
                                 <nav className="main-menu">
                                     <div className="navbar-header">
-                                        <button type="button" className="navbar-toggle" data-toggle="collapse"
-                                                data-target=".navbar-collapse">
+                                        {mobileOpen ? drawer() : <button onClick={handleDrawerToggle} type="button" className="navbar-toggle" data-toggle="collapse"
+                                                                       data-target=".navbar-collapse">
                                             <span className="icon-bar"></span>
                                             <span className="icon-bar"></span>
                                             <span className="icon-bar"></span>
                                             <span className="icon-bar"></span>
-                                        </button>
+                                        </button>}
+
                                     </div>
                                     <div className="navbar-collapse collapse clearfix">
                                         <ul className="navigation clearfix" style={{paddingLeft: '30px'}}>
@@ -103,16 +261,8 @@ const Header = (props) => {
                                             </li>
                                             <li><a style={{textDecoration: "none"}} href="/about">О компании</a></li>
                                             <li onMouseEnter={() => setIsVisible2(!isVisible2)} onMouseLeave={() => setIsVisible2(!isVisible2)} className="dropdown"><a style={{textDecoration: "none"}} href="/partners">Партнерам</a>
-                                                {/*<ul style={{display: `${showHiddenSubMenu2()}`}} className="submenu">*/}
-                                                {/*    <li><a style={{textDecoration: "none"}} href="/caseStudies">Case Studies</a></li>*/}
-                                                {/*    <li><a style={{textDecoration: "none"}} href="/caseDetails">Case Details</a></li>*/}
-                                                {/*</ul>*/}
                                             </li>
                                             <li onMouseEnter={() => setIsVisible3(!isVisible3)} onMouseLeave={() => setIsVisible3(!isVisible3)} className="dropdown"><a style={{textDecoration: "none"}} href="/news">Новости</a>
-                                                {/*<ul style={{display: `${showHiddenSubMenu3()}`}} className="submenu">*/}
-                                                {/*    <li><a style={{textDecoration: "none"}} href="/blog">News Blog</a></li>*/}
-                                                {/*    <li><a style={{textDecoration: "none"}} href="/blogDetails">Blog Details</a></li>*/}
-                                                {/*</ul>*/}
                                             </li>
                                             <li><a style={{textDecoration: "none"}} href="/contact">Контакты</a></li>
                                         </ul>

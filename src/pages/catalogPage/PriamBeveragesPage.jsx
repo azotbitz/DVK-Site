@@ -10,7 +10,7 @@ const PriamBeveragesPage = () => {
             </div>
 
             <section className="news-section">
-                <div className="container my-container">
+                <div className="container my-container" style={{display: 'block'}}>
 
                     <div style={{display: 'flex'}} className="single-items">
                         <div style={{display: 'flex', justifyContent: "center"}} className="img-box">
@@ -34,7 +34,7 @@ const PriamBeveragesPage = () => {
             </div>
 
             <section className="news-section">
-                <div className="container my-container">
+                <div className="container my-container" style={{display: 'block'}}>
 
                     <div style={{display: 'flex'}} className="single-items">
                         <div style={{display: 'flex', justifyContent: "center"}} className="img-box">
@@ -58,7 +58,7 @@ const PriamBeveragesPage = () => {
             </div>
 
             <section className="news-section">
-                <div className="container my-container">
+                <div className="container my-container" style={{display: 'block'}}>
 
                     <div style={{display: 'flex'}} className="single-items">
                         <div style={{display: 'flex', justifyContent: "center"}} className="img-box">

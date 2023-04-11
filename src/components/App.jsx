@@ -7,7 +7,7 @@ import NewsPage from "../pages/NewsPage";
 import RumPage from "../pages/catalogPage/RumPage";
 import WhiskyPage from "../pages/catalogPage/WhiskyPage";
 import VodkaPage from "../pages/catalogPage/VodkaPage";
-import JinPage from "../pages/catalogPage/JinPage";
+import GinPage from "../pages/catalogPage/GinPage";
 import AboutPage from "../pages/AboutPage";
 import PartnersPage from "../pages/PartnersPage";
 import ContactsPage from "../pages/ContactsPage";
@@ -23,7 +23,7 @@ function App() {
                   <Route path={'/news'} element={<NewsPage/>}/>
                   <Route path={'/rum'} element={<RumPage/>}/>
                   <Route path={'/whisky'} element={<WhiskyPage/>}/>
-                  <Route path={'/jin'} element={<JinPage/>}/>
+                  <Route path={'/gin'} element={<GinPage/>}/>
                   <Route path={'/vodka'} element={<VodkaPage/>}/>
                   <Route path={'/priambeverages'} element={<PriamBeveragesPage/>}/>
                   <Route path={'/about'} element={<AboutPage/>}/>

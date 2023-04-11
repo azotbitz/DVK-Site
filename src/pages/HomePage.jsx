@@ -30,7 +30,7 @@ export const HomePage = () => {
 
             <section className="feature-section feature-style-one centred">
                 <div className="container my-container">
-                    <div className="top-content">
+                    <div className="top-content" style={{width: '99%'}}>
                         <div className="title">ООО «ДВК» - эксклюзивный дистрибьютор на территории РФ.</div>
                         <div style={{paddingBottom: '0px'}} className="text">
                             Компания основана в 2015 году, специализируется на импорте продукции из Индии. Мы уделяем особое внимание качеству, уважаем и высоко ценим традиции Южной Азии.
@@ -45,36 +45,37 @@ export const HomePage = () => {
 
             <section className="news-section">
                 <div className="container my-container">
-                    <div className="row" style={{marginBottom: '10%'}}>
+                    <div className="row" style={{marginBottom: '10%', display: 'flex',
+                        width: '100%'}}>
                         <div className="col-md-3 col-sm-6 col-xs-12 news-column">
                             <div className="single-item">
-                                <div className="img-box"><a href="#"><figure><img src="images/news/1.png" alt=""/></figure></a></div>
+                                <div className="img-box"><a href="/rum"><figure><img src="images/news/1.png" alt=""/></figure></a></div>
                                 <div className="lower-content">
-                                    <h4><a href="#">РОМ</a></h4>
+                                    <h4><a href="/rum">РОМ</a></h4>
                                 </div>
                             </div>
                         </div>
                         <div className="col-md-3 col-sm-6 col-xs-12 news-column">
                             <div className="single-item">
-                                <div className="img-box"><a href="#"><figure><img src="images/news/2.png" alt=""/></figure></a></div>
+                                <div className="img-box"><a href="/whisky"><figure><img src="images/news/2.png" alt=""/></figure></a></div>
                                 <div className="lower-content">
-                                    <h4><a href="#">ВИСКИ</a></h4>
+                                    <h4><a href="/whisky">ВИСКИ</a></h4>
                                 </div>
                             </div>
                         </div>
                         <div className="col-md-3 col-sm-6 col-xs-12 news-column">
                             <div className="single-item">
-                                <div className="img-box"><a href="#"><figure><img src="images/news/3.png" alt=""/></figure></a></div>
+                                <div className="img-box"><a href="/gin"><figure><img src="images/news/3.png" alt=""/></figure></a></div>
                                 <div className="lower-content">
-                                    <h4><a style={{paddingLeft: '7px'}} href="#">ДЖИН</a></h4>
+                                    <h4><a style={{paddingLeft: '7px'}} href="/gin">ДЖИН</a></h4>
                                 </div>
                             </div>
                         </div>
                         <div className="col-md-3 col-sm-6 col-xs-12 news-column">
                             <div className="single-item">
-                                <div className="img-box"><a href="#"><figure><img src="images/news/4.png" alt=""/></figure></a></div>
+                                <div className="img-box"><a href="/vodka"><figure><img src="images/news/4.png" alt=""/></figure></a></div>
                                 <div className="lower-content">
-                                    <h4><a style={{paddingLeft: '15px'}} href="#">ВОДКА</a></h4>
+                                    <h4><a style={{paddingLeft: '15px'}} href="/vodka">ВОДКА</a></h4>
                                 </div>
                             </div>
                         </div>

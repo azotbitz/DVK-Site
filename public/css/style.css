@@ -74,7 +74,7 @@
   outline:none;
 }
 .my-container {
-  width: 1100px;
+
 }
 /*** 
 
@@ -152,6 +152,9 @@ body {
 @media (min-width:1200px) {
   .container {
     padding: 0px 15px;
+  }
+  .my-container {
+    width: 1000px;
   }
 }
 
@@ -413,8 +416,10 @@ body{
   position: relative;
   display: flex;
   justify-content: space-around;
-  width: 208px;
+  width: 100%;
   margin-top: 15px;
+  margin-left: 25px;
+
 }
 .sticky-header .logo-box{
   margin-top: 18px;
@@ -1611,9 +1616,10 @@ body{
 .main-footer{
   position: relative;
   color: #fff;
+
 }
 .footer-column{
-  text-align: center;
+
 }
 .main-footer p,
 .main-footer a{
@@ -1694,12 +1700,10 @@ body{
   color: #616161;
 }
 .main-footer .footer-widget .text{
-  text-align: left;
-  padding-left: 95px;
+
 }
 .main-footer .footer-widget .list{
-  text-align: left;
-  padding-left: 110px;
+
 }
 .footer-social{
   text-align: left;

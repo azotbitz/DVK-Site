@@ -6,11 +6,12 @@ const Footer = () => {
         <>
             <footer className="main-footer-area">
                 <div className="main-footer">
-                    <div className="container my-container">
-                        <div className="row" style={{display: "contents"}}>
+                    <div className="container" style={{display: 'flex', justifyContent: 'space-between'}}>
+                        <div className='container-2'>
+                        <div className="row" style={{display: "flex"}}>
                             <div className="col-md-4 col-sm-6 col-xs-12 footer-column">
                                 <div className="about-company footer-widget">
-                                    <div style={{paddingRight: '50px'}} className="footer-title"><h3>Контакты</h3></div>
+                                    <div className="footer-title"><h3>Контакты</h3></div>
                                     <div className="text">
                                         <p>Россия, г. Москва, Волгоградский проспект, д. 42, корп. 23<br/>
                                             <br/>Тел.: 8 (495) 640 - 41 – 66<br/>
@@ -19,25 +20,25 @@ const Footer = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-4 col-sm-6 col-xs-12 footer-column">
+                            <div className="col-md-4 col-sm-6 col-xs-12 footer-column" style={{paddingLeft: '10%'}}>
                                 <div className="link-widget footer-widget">
-                                    <div className="footer-title"><h3>Ссылки</h3></div>
+                                    <div style={{paddingLeft: '18px'}} className="footer-title footer-title-2"><h3>Ссылки</h3></div>
                                     <ul className="list">
                                         <li><a href="/">Главная</a></li>
-                                        <li><a href="#">Контакты</a></li>
-                                        <li><a href="#">О компании</a></li>
-                                        <li><a href="#">Партнерам</a></li>
-                                        <li><a href="#">Новости</a></li>
-                                        <li><a href="#">Контакты</a></li>
+                                        <li><a href="/contact">Контакты</a></li>
+                                        <li><a href="/about">О компании</a></li>
+                                        <li><a href="/partners">Партнерам</a></li>
+                                        <li><a href="/news">Новости</a></li>
+                                        <li><a href="/contact">Контакты</a></li>
                                         <li><a href="#">Дисклеймер</a></li>
-                                        <li><a href="#">Политика компании</a></li>
+                                        <li><a href="#">Политика</a></li>
                                     </ul>
                                 </div>
                             </div>
 
-                            <div className="col-md-4 col-sm-6 col-xs-12 footer-column">
-                                <div className="footer-title"><h3>Соцсети</h3></div>
-                                <ul className="footer-social footer-widget">
+                            <div className="col-md-4 col-sm-6 col-xs-12 footer-column" style={{paddingLeft: '15%'}}>
+                                <div className="footer-title footer-title-2"><h3>Соцсети</h3></div>
+                                <ul className="footer-widget-2">
                                     <li><a href="#">
                                         <svg className='fa' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
                                     </a></li>
@@ -55,6 +56,7 @@ const Footer = () => {
                                     </a></li>
                                 </ul>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>

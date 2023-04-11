@@ -10,7 +10,7 @@ const RumPage = () => {
             </div>
 
             <section className="news-section">
-                <div className="container my-container">
+                <div className="container my-container" style={{display: 'block'}}>
 
                             <div style={{display: 'flex'}} className="single-items">
                                 <div style={{display: 'flex', justifyContent: "center"}} className="img-box">
@@ -27,7 +27,7 @@ const RumPage = () => {
                                 </div>
                             </div>
 
-                            <div style={{display: 'flex'}} className="single-items">
+                            <div style={{display: 'flex'}} className="single-items-2">
                                 <div className="lower-content">
                                     <h4><a href="#">OLD MONK White 42,8%</a></h4>
                                     <p className='text'>
@@ -67,7 +67,7 @@ const RumPage = () => {
                             </div>
 
 
-                            <div style={{display: 'flex'}} className="single-items">
+                            <div style={{display: 'flex'}} className="single-items-2">
                                 <div className="lower-content">
                                     <h4><a href="#">OLD MONK Supreme 0,75 выдержка 12 лет 42,8%</a></h4>
                                     <p className='text'>

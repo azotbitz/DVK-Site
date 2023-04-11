@@ -10,7 +10,7 @@ const WhiskyPage = () => {
             </div>
 
             <section className="news-section">
-                <div className="container my-container">
+                <div className="container my-container" style={{display: 'block'}}>
 
                     <div style={{display: 'flex'}} className="single-items">
                         <div style={{display: 'flex', justifyContent: "center"}} className="img-box">
@@ -28,7 +28,7 @@ const WhiskyPage = () => {
                         </div>
                     </div>
 
-                    <div style={{display: 'flex'}} className="single-items">
+                    <div style={{display: 'flex'}} className="single-items-2">
                         <div className="lower-content">
                             <h4><a href="#">SOLAN NO.ONE RESERVA PREMIUM WHISKY  42,8%</a></h4>
                             <p className='text'>
