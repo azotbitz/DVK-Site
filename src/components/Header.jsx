@@ -1,6 +1,5 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link } from "react-router-dom";
-import {useNavigate} from "react-router-dom";
 import {
     Accordion, AccordionDetails, AccordionSummary,
     Box, Drawer, List, ListItem, ListItemIcon, Typography,
@@ -10,6 +9,8 @@ const Header = (props) => {
     const [isVisible, setIsVisible] = useState(false);
     const [isVisible2, setIsVisible2] = useState(false);
     const [isVisible3, setIsVisible3] = useState(false);
+
+    const [isEnglish, setIsEnglish] = useState(false);
 
     const drawer = () => {
         return (
@@ -22,7 +23,8 @@ const Header = (props) => {
         PaperProps={{
             sx: {
                 backgroundColor: "#2c2e2d",
-                width: '33%',
+                width: '40%',
+                overflowX: 'hidden'
             },
         }}
     >
@@ -52,7 +54,7 @@ const Header = (props) => {
                     >
                         <Typography sx={{color: 'rgb(224 224 224)', fontWeight: 400, fontFamily: '"Oswald", Arial, Tahoma, sansSerif', fontSize: '17px', lineHeight: '0px'}}>Каталог</Typography>
                     </AccordionSummary>
-                    <AccordionDetails>
+                    <AccordionDetails style={{paddingLeft: '0px'}}>
                         <List>
                             <ListItem button onClick={() => setMobileOpen(false)}>
                                 <ListItemIcon>
@@ -219,8 +221,8 @@ const Header = (props) => {
 
 
 
-    const container = window !== undefined ? () => window().document.body : undefined;
 
+    const container = window !== undefined ? () => window().document.body : undefined;
 
 
     return (
@@ -235,7 +237,7 @@ const Header = (props) => {
                             </div>
                         </div>
                         <div className="col-md-9 col-sm-12 col-xs-12">
-                            <div className="menu-area">
+                            <div className="menu-area" style={{marginTop: '10px'}}>
                                 <nav className="main-menu">
                                     <div className="navbar-header">
                                         {mobileOpen ? drawer() : <button onClick={handleDrawerToggle} type="button" className="navbar-toggle" data-toggle="collapse"
@@ -248,10 +250,11 @@ const Header = (props) => {
 
                                     </div>
                                     <div className="navbar-collapse collapse clearfix">
-                                        <ul className="navigation clearfix" style={{paddingLeft: '30px'}}>
+                                        <ul className="navigation clearfix">
                                             <li><a style={{textDecoration: "none"}} href="/">Главная</a></li>
                                             <li onMouseEnter={() => setIsVisible(!isVisible)} onMouseLeave={() => setIsVisible(!isVisible)} className="dropdown"><a style={{textDecoration: "none"}} href="/rum">Каталог</a>
                                                 <ul style={{display: `${showHiddenSubMenu()}`}} className="submenu">
+                                                    <li style={{height: '43px', backgroundColor: 'white'}}>  </li>
                                                     <li><a style={{textDecoration: "none"}} href="/rum">Ром</a></li>
                                                     <li><a style={{textDecoration: "none"}} href="/whisky">Виски</a></li>
                                                     <li><a style={{textDecoration: "none"}} href="/jin">Джин</a></li>
@@ -265,6 +268,8 @@ const Header = (props) => {
                                             <li onMouseEnter={() => setIsVisible3(!isVisible3)} onMouseLeave={() => setIsVisible3(!isVisible3)} className="dropdown"><a style={{textDecoration: "none"}} href="/news">Новости</a>
                                             </li>
                                             <li><a style={{textDecoration: "none"}} href="/contact">Контакты</a></li>
+                                            <li style={{paddingLeft: '1%'}}>
+                                            </li>
                                         </ul>
                                     </div>
                                 </nav>

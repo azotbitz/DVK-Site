@@ -74,7 +74,8 @@
   outline:none;
 }
 .my-container {
-
+  padding-left: 20px;
+  padding-right: 20px;
 }
 /*** 
 
@@ -87,40 +88,35 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 .banner {
-  height: 100%;
-  display: contents;
-}
-.slide-1{
-  background-image: url("/images/slider/4.jpg");
-  height: 765px;
-  width: 100%;
-  background-size: 100%;
-  justify-content: center;
-  display: flex;
+  display: block;
+  background-color: #000000;
+  margin-top: 100px;
 }
 .slide-2{
-  background-image: url("/images/slider/2.jpg");
-  height: 765px;
-  width: 100%;
-  background-size: 115%;
-  justify-content: center;
-  display: flex;
+  background-image: url("/images/slider/1.png");
+  height: 700px;
+  max-width: 1920px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /*max-height: 2000px;*/
 }
 .slide-3{
-  background-image: url("/images/slider/1.jpg");
-  height: 765px;
-  width: 100%;
-  background-size: 100%;
-  justify-content: center;
-  display: flex;
+  background-image: url("/images/slider/2.png");
+  max-width: 1920px;
+  background-size: cover;
+  height: 700px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .slide-4{
-  background-image: url("/images/slider/3.jpg");
-  height: 765px;
-  width: 100%;
-  background-size: 100%;
-  justify-content: center;
-  display: flex;
+  background-image: url("/images/slider/3.png");
+  height: 700px;
+  max-width: 1920px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /*max-height: 2000px;*/
 }
 .slider-list{
   transform: initial;
@@ -154,10 +150,15 @@ body {
     padding: 0px 15px;
   }
   .my-container {
-    width: 1000px;
+    width: 970px;
   }
 }
-
+.slider-container{
+  width: 100%;
+  max-width: 2560px;
+  padding-left: 12%;
+  padding-right: 12%;
+}
 a{
   text-decoration:none;
   position: relative;
@@ -331,8 +332,8 @@ p{
   font-size: 16px;
 }
 .submenu {
-  padding-top: 5px;
-  margin-top: -2px;
+
+  margin-top: 0px;
   padding-bottom: 5px;
   margin-bottom: 0px;
 }
@@ -410,6 +411,7 @@ body{
 .theme_menu{
   position: relative;
   background: #FFFFFF;
+  padding: 2% 0% 2% 0%;
 }
 
 .logo-box{
@@ -417,8 +419,8 @@ body{
   display: flex;
   justify-content: space-around;
   width: 100%;
-  margin-top: 15px;
-  margin-left: 25px;
+  padding-left: 20%;
+  margin-left: 15%;
 
 }
 .sticky-header .logo-box{
@@ -426,16 +428,15 @@ body{
 }
 .menu-area{
   position: relative;
-  display: inline-block;
+
 }
 .main-menu{
   position:relative;
-  display: inline-block;
-  top: 2px;
+
 }
 
 .main-menu .navbar-collapse{
-  padding:0px;  
+
 }
 
 .main-menu .navigation{
@@ -444,8 +445,7 @@ body{
 }
 
 .main-menu .navigation > li{
-  padding-top: 22px;
-  padding-bottom: 32px;
+  padding-left: 5%;
   position:relative;
   display: inline-block;
   margin-left: 20px;
@@ -464,7 +464,6 @@ body{
   font-size:16px;
   color: #2c2e2d;
   line-height: 26px;
-  padding: 0px 20px;
   opacity:1;
   -webkit-transition:all 500ms ease;
 }
@@ -486,7 +485,7 @@ body{
   right: auto;
   top: 100%;
   background: #f5f5f5;
-  width: 125px;
+  width: 105px;
   z-index: 999;
   display: none;
 }
@@ -775,7 +774,7 @@ body{
 
 .feature-section{
   position: relative;
-  padding: 120px 0px 0px 0px;
+  padding: 5% 0px 0px 0px;
 }
 .feature-section .top-content .title{
   position: relative;

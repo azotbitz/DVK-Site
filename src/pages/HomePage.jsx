@@ -15,15 +15,16 @@ export const HomePage = () => {
         <>
 
             <div className='banner'>
-                <Carousel defaultControlsConfig={{nextButtonText: '→', prevButtonText: '←', nextButtonStyle:{backgroundColor: 'white', paddingBottom: '12px', color: 'black'}, prevButtonStyle:{backgroundColor: 'white', paddingBottom: '12px', color: 'black'} }} animation={"zoom"} wrapAround={true} autoplay={true} autoplayInterval={5000}>
-                    <div className='slide-4'>
-                    </div>
+                <Carousel defaultControlsConfig={{nextButtonText: '→', prevButtonText: '←', nextButtonStyle:{marginTop: '-300%', backgroundColor: 'white', paddingBottom: '12px', color: 'black'}, prevButtonStyle:{marginTop: '-300%', backgroundColor: 'white', paddingBottom: '12px', color: 'black'} }} animation={"zoom"} wrapAround={true} autoplay={true} autoplayInterval={5000}>
                     <div className='slide-2'>
                     </div>
                     <div className='slide-3'>
                     </div>
-                    <div className='slide-1'>
+                    <div className='slide-4'>
                     </div>
+                    {/*<img src={'/images/slider/1.png'}/>*/}
+                    {/*<img src={'/images/slider/2.png'}/>*/}
+                    {/*<img src={'/images/slider/3.png'}/>*/}
                 </Carousel>
             </div>
 
