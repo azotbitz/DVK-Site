@@ -1,7 +1,51 @@
 import React from 'react';
 
 
-const Footer = () => {
+const Footer = (props) => {
+
+    let content = {
+        English: {
+            mains: {
+                contact: 'Contact Us',
+                links: 'Links',
+                socialmedia: 'Social Media'
+            },
+            contact: 'Volgogradsky avenue, 42, building 23, Moscow, Russia',
+            title: {
+                home: 'Home',
+                catalog: 'Catalog',
+                about: 'About',
+                partners: 'Partners Info',
+                news: 'News',
+                contact: 'Contact Us',
+                disclaimer: 'Disclaimer',
+                policy: 'Policy'
+            },
+        },
+        Russian: {
+            mains: {
+                contact: 'Контакты',
+                links: 'Ссылки',
+                socialmedia: 'Соцсети'
+            },
+            contact: 'Россия, г. Москва, Волгоградский проспект, д. 42, корп. 23',
+            title: {
+                home: 'Главная',
+                catalog: 'Каталог',
+                about: 'О Компании',
+                partners: 'Партнерам',
+                news: 'Новости',
+                contact: 'Контакты',
+                disclaimer: 'Дисклеймер',
+                policy: 'Политика'
+            },
+        }
+    };
+
+    props.language === "Russian"
+        ? (content = content.Russian)
+        : (content = content.English);
+
     return (
         <>
             <footer className="main-footer-area">
@@ -11,9 +55,9 @@ const Footer = () => {
                         <div className="row" style={{display: "flex"}}>
                             <div className="col-md-4 col-sm-6 col-xs-12 footer-column">
                                 <div className="about-company footer-widget">
-                                    <div className="footer-title"><h3>Контакты</h3></div>
+                                    <div className="footer-title"><h3>{content.mains.contact}</h3></div>
                                     <div className="text">
-                                        <p>Россия, г. Москва, Волгоградский проспект, д. 42, корп. 23<br/>
+                                        <p>{content.contact}<br/>
                                             <br/>Тел.: 8 (495) 640 - 41 – 66<br/>
                                             info@dvkwine.ru
                                         </p>
@@ -22,22 +66,22 @@ const Footer = () => {
                             </div>
                             <div className="col-md-4 col-sm-6 col-xs-12 footer-column" style={{paddingLeft: '10%'}}>
                                 <div className="link-widget footer-widget">
-                                    <div style={{paddingLeft: '18px'}} className="footer-title footer-title-2"><h3>Ссылки</h3></div>
+                                    <div style={{paddingLeft: '18px'}} className="footer-title footer-title-2"><h3>{content.mains.links}</h3></div>
                                     <ul className="list">
-                                        <li><a href="/">Главная</a></li>
-                                        <li><a href="/contact">Контакты</a></li>
-                                        <li><a href="/about">О компании</a></li>
-                                        <li><a href="/partners">Партнерам</a></li>
-                                        <li><a href="/news">Новости</a></li>
-                                        <li><a href="/contact">Контакты</a></li>
-                                        <li><a href="#">Дисклеймер</a></li>
-                                        <li><a href="#">Политика</a></li>
+                                        <li><a href="/">{content.title.home}</a></li>
+                                        <li><a href="/rum">{content.title.catalog}</a></li>
+                                        <li><a href="/about">{content.title.about}</a></li>
+                                        <li><a href="/partners">{content.title.partners}</a></li>
+                                        <li><a href="/news">{content.title.news}</a></li>
+                                        <li><a href="/contact">{content.title.contact}</a></li>
+                                        <li><a href="#">{content.title.disclaimer}</a></li>
+                                        <li><a href="#">{content.title.policy}</a></li>
                                     </ul>
                                 </div>
                             </div>
 
                             <div className="col-md-4 col-sm-6 col-xs-12 footer-column" style={{paddingLeft: '15%'}}>
-                                <div className="footer-title footer-title-2"><h3>Соцсети</h3></div>
+                                <div className="footer-title footer-title-2"><h3>{content.mains.socialmedia}</h3></div>
                                 <ul className="footer-widget-2">
                                     <li><a href="#">
                                         <svg className='fa' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
@@ -61,10 +105,6 @@ const Footer = () => {
                     </div>
                 </div>
             </footer>
-
-            <section className="footer-bottom centred">
-                <div className="copyright">Copyright © 2023 <a href="#">Mohan Meakin Ltd.</a>. All Rights Reserved.</div>
-            </section>
         </>
     )
 };

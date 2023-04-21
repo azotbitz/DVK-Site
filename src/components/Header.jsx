@@ -9,8 +9,44 @@ const Header = (props) => {
     const [isVisible, setIsVisible] = useState(false);
     const [isVisible2, setIsVisible2] = useState(false);
     const [isVisible3, setIsVisible3] = useState(false);
-
     const [isEnglish, setIsEnglish] = useState(false);
+
+    let content = {
+        English: {
+            title: {
+                home: 'Home',
+                catalog: 'Catalog',
+                rum: 'Rum',
+                whiskey: 'Whiskey',
+                gin: 'Gin',
+                vodka: 'Vodka',
+                priam: "Drinks of Priam Beverages",
+                about: 'About',
+                partners: 'Partners Info',
+                news: 'News',
+                contact: 'Contact Us'
+            },
+        },
+        Russian: {
+            title: {
+                home: 'Главная',
+                catalog: 'Каталог',
+                rum: 'Ром',
+                whiskey: 'Виски',
+                gin: 'Джин',
+                vodka: 'Водка',
+                priam: "Напитки Priam Beverages",
+                about: 'О Компании',
+                partners: 'Партнерам',
+                news: 'Новости',
+                contact: 'Контакты'
+            },
+        }
+    };
+
+    props.language === "Russian"
+        ? (content = content.Russian)
+        : (content = content.English);
 
     const drawer = () => {
         return (
@@ -19,7 +55,7 @@ const Header = (props) => {
         variant={'temporary'}
         anchor={'right'}
         open={mobileOpen}
-        onClose={() => setMobileOpen(false)}
+        onClose={() => setMobileOpen(!mobileOpen)}
         PaperProps={{
             sx: {
                 backgroundColor: "#2c2e2d",
@@ -31,7 +67,7 @@ const Header = (props) => {
         <List>
             <ListItem button onClick={() => setMobileOpen(false)}>
                 <ListItemIcon>
-                    <ListItem
+                    <ListItem onClick={() => window.scrollTo(0, 0)}
                         component={Link}
                         style={{
                             textDecoration: "none",
@@ -40,7 +76,7 @@ const Header = (props) => {
                         }}
                         to="/"
                     >
-                         Главная
+                        {content.title.home}
                     </ListItem>
                 </ListItemIcon>
             </ListItem>
@@ -52,13 +88,15 @@ const Header = (props) => {
                         id="panel1a-header"
                         sx={{color: 'rgb(224 224 224)'}}
                     >
-                        <Typography sx={{color: 'rgb(224 224 224)', fontWeight: 400, fontFamily: '"Oswald", Arial, Tahoma, sansSerif', fontSize: '17px', lineHeight: '0px'}}>Каталог</Typography>
+                        <Typography sx={{color: 'rgb(224 224 224)', fontWeight: 400, fontFamily: '"Oswald", Arial, Tahoma, sansSerif', fontSize: '17px', lineHeight: '0px'}}>{content.title.catalog}</Typography>
                     </AccordionSummary>
                     <AccordionDetails style={{paddingLeft: '0px'}}>
                         <List>
-                            <ListItem button onClick={() => setMobileOpen(false)}>
+                            <ListItem button onClick={() => setMobileOpen(false)}
+                                >
                                 <ListItemIcon>
                                     <ListItem
+                                        onClick={() => window.scrollTo(0, 0)}
                                         component={Link}
                                         style={{
                                             textDecoration: "none",
@@ -67,28 +105,30 @@ const Header = (props) => {
                                         }}
                                         to="/rum"
                                     >
-                                        Ром
+                                        {content.title.rum}
                                     </ListItem>
                                 </ListItemIcon>
                             </ListItem>
                             <ListItem button onClick={() => setMobileOpen(false)}>
                                 <ListItemIcon>
                                     <ListItem
+                                        onClick={() => window.scrollTo(0, 0)}
                                         component={Link}
                                         style={{
                                             textDecoration: "none",
                                             color: "#e0e0e0",
                                             fontWeight: 400,
                                         }}
-                                        to="/whisky"
+                                        to="/whiskey"
                                     >
-                                        Виски
+                                        {content.title.whiskey}
                                     </ListItem>
                                 </ListItemIcon>
                             </ListItem>
                             <ListItem button onClick={() => setMobileOpen(false)}>
                                 <ListItemIcon>
                                     <ListItem
+                                        onClick={() => window.scrollTo(0, 0)}
                                         component={Link}
                                         style={{
                                             textDecoration: "none",
@@ -97,13 +137,14 @@ const Header = (props) => {
                                         }}
                                         to="/gin"
                                     >
-                                        Джин
+                                        {content.title.gin}
                                     </ListItem>
                                 </ListItemIcon>
                             </ListItem>
                             <ListItem button onClick={() => setMobileOpen(false)}>
                                 <ListItemIcon>
                                     <ListItem
+                                        onClick={() => window.scrollTo(0, 0)}
                                         component={Link}
                                         style={{
                                             textDecoration: "none",
@@ -112,23 +153,24 @@ const Header = (props) => {
                                         }}
                                         to="/vodka"
                                     >
-                                        Водка
+                                        {content.title.vodka}
                                     </ListItem>
                                 </ListItemIcon>
                             </ListItem>
                             <ListItem button onClick={() => setMobileOpen(false)}>
                                 <ListItemIcon>
                                     <ListItem
+                                        onClick={() => window.scrollTo(0, 0)}
                                         component={Link}
                                         style={{
                                             textDecoration: "none",
                                             color: "#e0e0e0",
                                             fontWeight: 400,
+                                            width: 'min-content'
                                         }}
                                         to="/priambeverages"
                                     >
-                                        Напитки<br/>
-                                        Priam Beverages
+                                        {content.title.priam}
                                     </ListItem>
                                 </ListItemIcon>
                             </ListItem>
@@ -139,6 +181,7 @@ const Header = (props) => {
             <ListItem button onClick={() => setMobileOpen(false)}>
                 <ListItemIcon>
                     <ListItem
+                        onClick={() => window.scrollTo(0, 0)}
                         component={Link}
                         style={{
                             textDecoration: "none",
@@ -147,13 +190,14 @@ const Header = (props) => {
                         }}
                         to="/about"
                     >
-                        О компании
+                        {content.title.about}
                     </ListItem>
                 </ListItemIcon>
             </ListItem>
             <ListItem button onClick={() => setMobileOpen(false)}>
                 <ListItemIcon>
                     <ListItem
+                        onClick={() => window.scrollTo(0, 0)}
                         component={Link}
                         style={{
                             textDecoration: "none",
@@ -162,13 +206,14 @@ const Header = (props) => {
                         }}
                         to="/partners"
                     >
-                         Партнерам
+                        {content.title.partners}
                     </ListItem>
                 </ListItemIcon>
             </ListItem>
             <ListItem button onClick={() => setMobileOpen(false)}>
                 <ListItemIcon>
                     <ListItem
+                        onClick={() => window.scrollTo(0, 0)}
                         component={Link}
                         style={{
                             textDecoration: "none",
@@ -177,13 +222,14 @@ const Header = (props) => {
                         }}
                         to="/news"
                     >
-                        Новости
+                        {content.title.news}
                     </ListItem>
                 </ListItemIcon>
             </ListItem>
             <ListItem button onClick={() => setMobileOpen(false)}>
                 <ListItemIcon>
                     <ListItem
+                        onClick={() => window.scrollTo(0, 0)}
                         component={Link}
                         style={{
                             textDecoration: "none",
@@ -192,7 +238,7 @@ const Header = (props) => {
                         }}
                         to="/contact"
                     >
-                        Контакты
+                        {content.title.contact}
                     </ListItem>
                 </ListItemIcon>
             </ListItem>
@@ -227,8 +273,8 @@ const Header = (props) => {
 
     return (
         <>
-            <header className="main-header">
-            <div className="theme_menu sticky">
+            <header className="main-header sticky">
+            <div className="theme_menu">
                 <div className="container">
                         <div className="col-md-3 col-sm-12 col-xs-12">
                             <div className="logo-box">
@@ -251,23 +297,23 @@ const Header = (props) => {
                                     </div>
                                     <div className="navbar-collapse collapse clearfix">
                                         <ul className="navigation clearfix">
-                                            <li><a style={{textDecoration: "none"}} href="/">Главная</a></li>
-                                            <li onMouseEnter={() => setIsVisible(!isVisible)} onMouseLeave={() => setIsVisible(!isVisible)} className="dropdown"><a style={{textDecoration: "none"}} href="/rum">Каталог</a>
+                                            <li><a style={{textDecoration: "none"}} href="/">{content.title.home}</a></li>
+                                            <li onMouseEnter={() => setIsVisible(!isVisible)} onMouseLeave={() => setIsVisible(!isVisible)} className="dropdown"><a style={{textDecoration: "none"}} href="/rum">{content.title.catalog}</a>
                                                 <ul style={{display: `${showHiddenSubMenu()}`}} className="submenu">
                                                     <li style={{height: '43px', backgroundColor: 'white'}}>  </li>
-                                                    <li><a style={{textDecoration: "none"}} href="/rum">Ром</a></li>
-                                                    <li><a style={{textDecoration: "none"}} href="/whisky">Виски</a></li>
-                                                    <li><a style={{textDecoration: "none"}} href="/jin">Джин</a></li>
-                                                    <li><a style={{textDecoration: "none"}} href="/vodka">Водка</a></li>
-                                                    <li><a style={{textDecoration: "none"}} href="/priambeverages">Напитки Priam Beverages</a></li>
+                                                    <li><a style={{textDecoration: "none"}} href="/rum">{content.title.rum}</a></li>
+                                                    <li><a style={{textDecoration: "none"}} href="/whiskey">{content.title.whiskey}</a></li>
+                                                    <li><a style={{textDecoration: "none"}} href="/gin">{content.title.gin}</a></li>
+                                                    <li><a style={{textDecoration: "none"}} href="/vodka">{content.title.vodka}</a></li>
+                                                    <li><a style={{textDecoration: "none"}} href="/priambeverages">{content.title.priam}</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a style={{textDecoration: "none"}} href="/about">О компании</a></li>
-                                            <li onMouseEnter={() => setIsVisible2(!isVisible2)} onMouseLeave={() => setIsVisible2(!isVisible2)} className="dropdown"><a style={{textDecoration: "none"}} href="/partners">Партнерам</a>
+                                            <li><a style={{textDecoration: "none"}} href="/about">{content.title.about}</a></li>
+                                            <li onMouseEnter={() => setIsVisible2(!isVisible2)} onMouseLeave={() => setIsVisible2(!isVisible2)} className="dropdown"><a style={{textDecoration: "none"}} href="/partners">{content.title.partners}</a>
                                             </li>
-                                            <li onMouseEnter={() => setIsVisible3(!isVisible3)} onMouseLeave={() => setIsVisible3(!isVisible3)} className="dropdown"><a style={{textDecoration: "none"}} href="/news">Новости</a>
+                                            <li onMouseEnter={() => setIsVisible3(!isVisible3)} onMouseLeave={() => setIsVisible3(!isVisible3)} className="dropdown"><a style={{textDecoration: "none"}} href="/news">{content.title.news}</a>
                                             </li>
-                                            <li><a style={{textDecoration: "none"}} href="/contact">Контакты</a></li>
+                                            <li><a style={{textDecoration: "none"}} href="/contact">{content.title.contact}</a></li>
                                             <li style={{paddingLeft: '1%'}}>
                                             </li>
                                         </ul>

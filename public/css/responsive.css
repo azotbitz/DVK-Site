@@ -1,4 +1,4 @@
-/*  Theme HTML Template */
+/*  theme HTML Template */
 
 
 @media only screen and (max-width: 1920px){
@@ -59,6 +59,23 @@
 		display: flex;
 		overflow-x: hidden;
 		overflow-y: hidden;
+	}
+	.my-container{
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+	.my-container-2{
+		display: block;
+		margin-bottom: 5%;
+		padding-left: 7%;
+		width: 100%;
+	}
+	.single-items{
+		max-width: 685px;
+	}
+	.single-items-2{
+		max-width: 685px;
 	}
 	.logo-box{
 
@@ -579,6 +596,19 @@
 		overflow-x: hidden;
 		overflow-y: hidden;
 	}
+	.my-container-2{
+		max-width: 330px;
+		display: flex;
+		padding-left: 0;
+	}
+
+	.language-select{
+		min-height: 110px;
+	}
+	.main-footer-area{
+		padding-bottom: 7%;
+	}
+
 	.slider-container{
 		max-height: 270px;
 	}
@@ -593,6 +623,12 @@
 	.news-section .single-item .img-box{
 		display: block;
 	}
+	.single-item-2{
+		width: 150px;
+		margin: 0 0px;
+		display: block;
+	}
+
 	.main-footer .footer-widget .list {
 		margin-left: -40px;
 	}
@@ -606,6 +642,7 @@
 		margin-bottom: -215px;
 		margin-top: -50px;
 		height: 550px;
+		width: 110%;
 	}
 	.single-items{
 		display: flex;
@@ -672,10 +709,14 @@
 	.row{
 		margin-left: 0px;
 	}
+	.footer-widget-2{
+		margin-top: -12px;
+	}
 }
+
 @media only screen and (max-width: 321px){
 	.container{
-
+		width: 100%;
 	}
 	.slider-container{
 		max-height: 200px;
@@ -696,7 +737,7 @@
 
 
 
-@media only screen and (max-width: 991px){
+@media only screen and (max-width: 1024px){
     
 
 /*=================== mobile-menu ======================*/
